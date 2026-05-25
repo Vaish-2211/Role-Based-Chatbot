@@ -1,0 +1,54 @@
+# ── Web Framework ─────────────────────────────────────────────────────────────
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+python-multipart==0.0.12
+
+# ── Authentication ─────────────────────────────────────────────────────────────
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ── Configuration ──────────────────────────────────────────────────────────────
+pydantic-settings==2.6.1
+
+# ── Rate Limiting + Logging ────────────────────────────────────────────────────
+slowapi==0.1.9
+loguru==0.7.2
+
+# ── LangChain Core ─────────────────────────────────────────────────────────────
+langchain==0.3.8
+langchain-core==0.3.20
+langchain-community==0.3.8
+langchain-groq==0.2.1
+langchain-huggingface==0.1.2
+langchain-qdrant==0.2.0
+
+# ── LLM Provider ──────────────────────────────────────────────────────────────
+groq==0.12.0
+
+# ── Embeddings + Reranker (local models) ──────────────────────────────────────
+sentence-transformers==3.3.1
+
+# ── Sparse Retrieval ───────────────────────────────────────────────────────────
+rank-bm25==0.2.2
+
+# ── Vector Database ────────────────────────────────────────────────────────────
+qdrant-client==1.12.1
+
+# ── Data Processing ────────────────────────────────────────────────────────────
+pandas==2.2.3
+tabulate==0.9.0
+
+# ── Evaluation ─────────────────────────────────────────────────────────────────
+ragas==0.2.6
+datasets==3.1.0
+
+# ── Frontend ───────────────────────────────────────────────────────────────────
+streamlit==1.40.1
+
+# ── HTTP Client (Streamlit → FastAPI streaming) ────────────────────────────────
+httpx==0.27.2
+
+# ── Testing ────────────────────────────────────────────────────────────────────
+pytest==8.3.3
+pytest-asyncio==0.24.0
+httpx==0.27.2

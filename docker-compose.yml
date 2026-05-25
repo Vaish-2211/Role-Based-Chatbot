@@ -1,0 +1,55 @@
+services:
+
+  # ── Qdrant Vector Database ──────────────────────────────────────────────────
+  # Qdrant stores our document embeddings and metadata.
+  # Dashboard available at: http://localhost:6333/dashboard
+  # REST API available at:  http://localhost:6333
+  qdrant:
+    image: qdrant/qdrant:v1.12.4
+    container_name: finsolve-qdrant
+    ports:
+      - "6333:6333"   # REST API + Dashboard
+      - "6334:6334"   # gRPC (not used yet, but exposed for future use)
+    volumes:
+      # Persist the vector data to a local folder so it survives restarts.
+      - ./qdrant_storage:/qdrant/storage
+    environment:
+      QDRANT__LOG_LEVEL: INFO
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/readyz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI Backend (added in Phase 4 / Phase 7) ───────────────────────────
+  # Uncomment when Dockerfile.app is ready.
+  #
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.app
+  #   container_name: finsolve-backend
+  #   ports:
+  #     - "8000:8000"
+  #   env_file: .env
+  #   depends_on:
+  #     qdrant:
+  #       condition: service_healthy
+  #   restart: unless-stopped
+
+  # ── Streamlit Frontend (added in Phase 5 / Phase 7) ───────────────────────
+  # Uncomment when Dockerfile.frontend is ready.
+  #
+  # frontend:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.frontend
+  #   container_name: finsolve-frontend
+  #   ports:
+  #     - "8501:8501"
+  #   environment:
+  #     BACKEND_URL: http://backend:8000
+  #   depends_on:
+  #     - backend
+  #   restart: unless-stopped

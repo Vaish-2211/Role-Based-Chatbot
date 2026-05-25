@@ -1,0 +1,26 @@
+{
+  "tony_sharma": {
+    "role": "c_level",
+    "hashed_password": "$2b$12$BRnaDYMJb3tkuJWcXFwAW.eqeF6Eix.cTIjdkZmJobAJxyJZab9PC"
+  },
+  "alice_finance": {
+    "role": "finance",
+    "hashed_password": "$2b$12$ElbcxMrCkLwkKHsDLudN.O7v/qZbnf3cSbo1Mvr2wh/qk2iSzg6Ve"
+  },
+  "bob_marketing": {
+    "role": "marketing",
+    "hashed_password": "$2b$12$0ow3VU/2/FSjMp8Tt1LaweGmGrChSnwtI/s716lsjJHJ/1kDKhymG"
+  },
+  "carol_hr": {
+    "role": "hr",
+    "hashed_password": "$2b$12$hQZBjcAc..RkVGQxY8RoruF8Z/Bg2sidlODR/PZyncOebtGxjvTSe"
+  },
+  "dave_eng": {
+    "role": "engineering",
+    "hashed_password": "$2b$12$iirGJTe.0.N6myqtNZcareNd/XwNhUMIYNnM1KPbS7Mc6LXTUItGC"
+  },
+  "eve_employee": {
+    "role": "employee",
+    "hashed_password": "$2b$12$2lY/VGVDZJDc6Gqdr37g2.QGlasoBbA0thb449f/wGb622HeNvWf6"
+  }
+}
